@@ -8,6 +8,7 @@ RUN docker-php-ext-install zip
 # INSTALL COMPOSER
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 RUN composer self-update
-COPY ../ /var/www/html/
-# INSTALL YOUR DEPENDENCIES
-RUN composer install
+# RUN ENTRYPOINT
+COPY ./docker/php.entrypoint.sh /etc/docker-entrypoint.sh
+RUN chmod +x /etc/docker-entrypoint.sh
+ENTRYPOINT ["/etc/docker-entrypoint.sh"]
