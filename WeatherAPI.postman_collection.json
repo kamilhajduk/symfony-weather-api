@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "28f478c2-c4a7-46dd-9b35-ff4e23befa46",
+		"name": "WeatherAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Average Temperature",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\": \"2024-07-01\",\r\n    \"cities\": [\r\n        \"Poznan\",\r\n        \"Gdansk\",\r\n        \"Warszawa\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8070/average_temp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8070",
+					"path": [
+						"average_temp"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
