@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+  php:
+    image: php:8.2-fpm
+    container_name: php-fpm
+    build:
+        context: ./
+        dockerfile: ./docker/php.Dockerfile
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx.conf:/etc/nginx/conf.d/weatherapi.conf
+    ports:
+      - "8070:8070"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

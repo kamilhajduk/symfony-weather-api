@@ -7,4 +7,4 @@ API_KEY=...
 ```
 
 2. Run local server by using ```symfony server:start --port=8070```
-or use Docker environment ```docker-compose --build up -d```
+or use Docker environment ```docker-compose up --build -d```
